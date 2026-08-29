@@ -52,7 +52,7 @@ class MyModel(nn.Module):
   registry lain = korupsi senyap), kesetaraan config penuh + `config_hash`
   (deteksi ckpt basi setelah skema berevolusi), dan `opt_kind` (state optimizer
   tidak portabel antar jenis optimizer).
-- **Protokol tool (SFT)**: placeholder `<S8>`/`<S9>` (panggilan) dan
+- **Protokol alat pada pengalaman operasional (field legacy: SFT)**: placeholder `<S8>`/`<S9>` (panggilan) dan
   `<S10>`/`<S11>` (hasil) di content assistant disubstitusi loader menjadi ID
   sentinel tunggal — hanya di content assistant, tidak pernah di content user
   (anti-spoofing: user tak boleh bisa "menghasilkan sentinel" lewat teks).

@@ -1,0 +1,61 @@
+name: Reproduction receipt
+description: Kirim hasil reproduksi dengan revision, hash, environment, dan raw evidence.
+title: "[REPRODUCTION] "
+labels: []
+body:
+  - type: input
+    id: experiment
+    attributes:
+      label: Experiment ID
+      placeholder: NMU-G1-REGISTRY-ROUNDTRIP-V1
+    validations:
+      required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Repository revision
+      description: Commit SHA yang benar-benar dijalankan.
+    validations:
+      required: true
+  - type: input
+    id: registry
+    attributes:
+      label: Registry SHA-256
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python, device, dependency, dan perintah.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Raw evidence
+      description: Input, expected result, observed result, dan tautan artefak bila ada.
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Status
+      options:
+        - PASS
+        - FAIL
+        - INSTRUMENT_INVALID
+    validations:
+      required: true
+  - type: textarea
+    id: deviation
+    attributes:
+      label: Deviation or blocker
+      description: Jelaskan perbedaan atau alasan instrumen tidak cukup.
+  - type: checkboxes
+    id: integrity
+    attributes:
+      label: Integrity declaration
+      options:
+        - label: Saya tidak memilih output terbaik dan tidak mengubah kontrak setelah melihat hasil.
+          required: true

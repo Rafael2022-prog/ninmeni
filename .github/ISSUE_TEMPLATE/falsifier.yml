@@ -1,0 +1,32 @@
+name: Proposed falsifier
+description: Ajukan kondisi yang dapat membatalkan klaim mekanis NINMENI.
+title: "[FALSIFIER] "
+labels: []
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Klaim yang diuji
+      description: Nyatakan satu klaim dan statusnya saat ini.
+    validations:
+      required: true
+  - type: textarea
+    id: intervention
+    attributes:
+      label: Intervensi minimum
+      description: Kondisi kontrol, input beku, dan satu perubahan yang diuji.
+    validations:
+      required: true
+  - type: textarea
+    id: decision
+    attributes:
+      label: Aturan keputusan sebelum hasil
+      description: Definisikan PASS, FALSIFIED, dan INSTRUMENT_INVALID.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Provenance dan raw artifact
+    validations:
+      required: true

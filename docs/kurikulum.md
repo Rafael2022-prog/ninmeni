@@ -1,8 +1,13 @@
-# Kurikulum Data NINMENI — Panduan Ringkas
+# Kurikulum Data NINMENI — Panduan Ringkas Generasi 1
+
+> **Batas istilah:** dokumen ini mempertahankan nama `pretraining` dan `SFT` karena
+> keduanya adalah nama file, field, dan fungsi pada jalur publik Generasi 1. Dalam
+> ontologi NINMENI yang berlaku, keduanya dibaca sebagai **pengalaman substrat** dan
+> **pengalaman operasional**; SFT bukan mekanisme belajar canonical NINMENI.
 
 Dua jalur data, dua peran yang berbeda dan tidak boleh dicampur:
 
-## 1. Pretraining — membentuk PEMAHAMAN
+## 1. Pengalaman substrat (field legacy: pretraining)
 - Isi: teks aktual (prosa komunikasi nyata) berbahasa Indonesia — artikel, dokumentasi,
   narasi, kode dengan penjelasan. Format: JSONL `{"teks": "..."}` (lihat
   `examples/curriculum/pretraining_contoh.jsonl`).
@@ -12,7 +17,7 @@ Dua jalur data, dua peran yang berbeda dan tidak boleh dicampur:
   Anda sendiri. Jangan gunakan data yang tidak boleh Anda gunakan.
 - Konten pengetahuan dunia (fakta, statistik, budaya) masuk ke jalur INI — bukan ke SFT.
 
-## 2. SFT — membentuk PROTOKOL DIALOG ("mulut")
+## 2. Pengalaman operasional (field legacy: SFT)
 - Isi: contoh percakapan/tugas dalam format turns (lihat `examples/curriculum/sft_contoh.jsonl`).
 - Peran: mengajarkan BENTUK berinteraksi (format jawaban, protokol tool, gaya) — bukan
   menjejalkan fakta. Fakta yang hanya ada di SFT cenderung rapuh.
@@ -29,7 +34,8 @@ Dua jalur data, dua peran yang berbeda dan tidak boleh dicampur:
 
 ## 3. Asas Prosedur-Terhitung (anti-hafalan)
 
-Segala yang diajarkan lewat SFT harus menghasilkan GENERALISASI, bukan hafalan.
+Segala pengalaman operasional harus diuji pada varian held-out, bukan dinilai dari
+kemampuannya mengulang contoh latih.
 Cara mencapainya bukan slogan, melainkan disiplin builder:
 
 - **Jawaban = fungsi dari input.** Setiap sample dihasilkan builder/oracle yang
